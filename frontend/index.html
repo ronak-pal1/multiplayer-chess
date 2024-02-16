@@ -6,5 +6,68 @@
     <title>Let's play chess together</title>
     <link href="./styles/index.css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <div class="whole-container">
+      <div class="background-image-container">
+        <img src="assets/chess-piece.png" alt="chess piece image" />
+      </div>
+
+      <div class="contents">
+        <p>🔥 Let's play it together 🔥</p>
+
+        <button
+          class="room-button"
+          onclick="expand('join-panel')"
+          id="join-room-button"
+        >
+          JOIN ROOM 🏚️
+        </button>
+        <button
+          class="room-button"
+          onclick="expand('room-panel')"
+          id="create-room-button"
+        >
+          CREATE ROOM 🏚️
+        </button>
+
+        <!-- {isJoining && <JoinRoomPanel />}
+          {isRoomCreated && <CreateRoomPanel roomId={roomId} />} -->
+
+        <div class="join-container" id="join-panel">
+          <input type="text" placeholder="Enter the code" />
+          <button>JOIN ROOM</button>
+        </div>
+
+        <div class="panel-container" id="room-panel">
+          <div class="panels">
+            <div class="player-profile">
+              <img src="assets/money-heist.jpg" alt="player 1 profile" />
+            </div>
+            <div class="player-room">🏚️</div>
+            <div class="player-profile">
+              <img src="assets/harry-potter.png" alt="player 2 profile" />
+            </div>
+          </div>
+          <div class="panel-details">
+            <div>
+              <p>ROOM CODE ➡️ <span id="room-code">afaf</span></p>
+              <div onclick="copyRoomId()">COPY</div>
+            </div>
+
+            <div>
+              <p>
+                Game link ➡️{" "}
+                <a href="#" id="room-link">
+                  http://localhost:5173/gameboard?roomId={roomId}
+                </a>
+              </p>
+              <div onclick="copyRoomURL()">COPY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./functionalities/front-navigation.js"></script>
+  </body>
 </html>
