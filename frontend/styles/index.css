@@ -49,7 +49,6 @@ body {
   height: 60px;
   font-size: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: lighter;
   color: rgb(51, 38, 38);
   border-radius: 5px;
   border: none;
@@ -61,11 +60,36 @@ body {
   transform: scale(1.1);
 }
 
+/* For responsiveness*/
+@media screen and (max-width: 768px) {
+  .contents > p {
+    font-size: 30px;
+  }
+
+  .room-button {
+    padding: 0 15px;
+    height: 50px;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .background-image-container > img {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contents > p {
+    font-size: 23px;
+  }
+}
+
 /*create room section styles */
 
 .panel-container {
   width: 60%;
-  height: 50%;
+  height: fit-content;
   margin-top: 50px;
   border: 0.4px solid rgb(202, 199, 199);
   display: none; /* or flex*/
@@ -135,10 +159,60 @@ body {
   transform: scale(0.8);
 }
 
+/* For responsive style*/
+@media screen and (max-width: 1024px) {
+  .player-room {
+    font-size: 70px;
+  }
+
+  .player-profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  .panel-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .panel-details > div > p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .panel-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .player-room {
+    font-size: 50px;
+  }
+
+  .player-profile {
+    width: 60px;
+    height: 60px;
+  }
+
+  .panel-details > div > p {
+    font-size: 16px;
+  }
+
+  .panel-details > div > div {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
 /* Join section style */
 
 .join-container {
-  width: 40%;
+  width: fit-content;
   display: none; /* or flex*/
   flex-direction: column;
   align-items: center;
@@ -146,9 +220,9 @@ body {
 }
 
 .join-container > input {
-  width: 70%;
+  width: 350px;
   height: 50px;
-  font-size: 23px;
+  font-size: 20px;
   padding-left: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: lighter;
@@ -156,8 +230,8 @@ body {
 }
 
 .join-container > button {
-  width: 20%;
-  height: 40px;
+  width: fit-content;
+  padding: 10px 20px;
   margin-top: 30px;
   border-radius: 5px;
   cursor: pointer;
@@ -172,4 +246,14 @@ body {
 
 .join-container > button:active {
   transform: scale(0.8);
+}
+
+/* For responsive design */
+@media screen and (max-width: 768px) {
+  .join-container > input {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 400;
+  }
 }

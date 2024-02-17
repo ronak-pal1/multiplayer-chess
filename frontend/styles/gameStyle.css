@@ -33,7 +33,7 @@ body {
 }
 
 .game-leave-button {
-  width: 50%;
+  width: fit-content;
   height: fit-content;
   font-size: 23px;
   padding: 8px 10px;
@@ -45,12 +45,12 @@ body {
 }
 
 .game-timer {
-  width: 70%;
+  width: fit-content;
   height: fit-content;
   background-color: yellowgreen;
-  font-size: 35px;
+  font-size: 23px;
   text-align: center;
-  padding: 10px 0px;
+  padding: 8px 10px;
   border-radius: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -96,6 +96,8 @@ body {
 /*______________ Game board style __________________*/
 
 .board-container {
+  width: 640px;
+  height: 640px;
   border: 0px solid black;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -113,6 +115,7 @@ body {
   text-align: center;
   cursor: pointer;
   user-select: none;
+  font-size: 60px;
   /* transform: rotate(180deg); */
 }
 
@@ -133,7 +136,6 @@ body {
   width: 100%;
   height: 100%;
   flex: 0.3;
-  display: flex;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -198,9 +200,116 @@ body {
 
 .chat-box > button {
   width: 100px;
-  height: 40px;
+  height: fit-content;
+  padding: 5px 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+  border-radius: 30px;
   background-color: #4949dd;
   color: white;
+}
+
+/* For responsive design */
+
+@media screen and (max-width: 1300px) {
+  .board-container {
+    width: 550px;
+    height: 550px;
+  }
+
+  .board-container > div > .box {
+    font-size: 50px;
+  }
+
+  .board-container > div > .highlighted-circle {
+    box-shadow: 0px 0px 20px 15px blue;
+  }
+
+  .chat-box > input {
+    width: 50%;
+    font-size: 14;
+  }
+
+  .chat-box > button {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 1014px) {
+  .board-container {
+    width: 480px;
+    height: 480px;
+  }
+
+  .board-container > div > .box {
+    font-size: 40px;
+  }
+
+  .board-panel {
+    flex: 0.6;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .chat-panel {
+    flex: 0.4;
+  }
+
+  .whole-gameboardpage-container {
+    justify-content: space-between;
+  }
+
+  .game-accessories {
+    flex: 0.2;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .board-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .board-container > div > .box {
+    font-size: 30px;
+  }
+
+  .board-container > div > .highlighted-circle {
+    box-shadow: 0px 0px 20px 10px blue;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .board-panel {
+    flex: 1;
+  }
+  .chat-panel {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .board-panel {
+    justify-content: center;
+  }
+
+  .board-container {
+    width: 350px;
+    height: 350px;
+  }
+
+  .board-container > div > .box {
+    font-size: 30px;
+  }
+
+  .player-details-section > .player-details > img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .player-details-section > .player-details > p {
+    font-size: 13px;
+  }
 }
