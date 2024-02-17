@@ -6,5 +6,53 @@
     <title>Game room</title>
     <link href="./styles/gameStyle.css" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <div class="whole-gameboardpage-container">
+      <div class="board-panel">
+        <div class="game-accessories">
+          <div class="game-timer">10:00</div>
+          <button class="game-leave-button">Leave</button>
+        </div>
+        <div class="board-details">
+          <div class="player-details-section">
+            <div class="player-details">
+              <img src="assets/harry-potter.png" alt="opponent profile" />
+              <p>opponent</p>
+            </div>
+
+            <div class="loader-container">
+              <div class="loader" id="loaderId"></div>
+            </div>
+          </div>
+
+          <div class="board-container" id="board"></div>
+
+          <div class="player-details-section">
+            <div class="player-details">
+              <img src="assets/harry-potter.png" alt="opponent profile" />
+              <p>Me</p>
+            </div>
+
+            <div class="loader-container">
+              <div class="loader" id="loaderId"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-panel">
+        <div class="chat-preview" id="chat-preview-field"></div>
+        <div class="chat-box">
+          <input
+            type="text"
+            placeholder="Start sending message"
+            value=""
+            id="chat-box-field"
+          />
+          <button onclick="sendChatMsg()">SEND</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./functionalities/game-logic.js"></script>
+  </body>
 </html>
